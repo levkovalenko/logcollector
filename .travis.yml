@@ -1,0 +1,15 @@
+language: python
+addons:
+  postgresql: "9.6"
+python:
+  - "3.6"
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+# setting up env
+before_script:
+  - psql -c 'create database logcollector;' -U postgres
+  - python3 ./gen_settings.py -ag SECRET_KEY -l 34
+# command to run tests
+script:
+  - cat ./logcollector/local_settings.py
