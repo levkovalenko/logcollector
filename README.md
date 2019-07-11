@@ -1,4 +1,4 @@
-# LogCollecotor
+# LogCollector
 
 ## platforms
 Данный проект нацелен на платформы Linux. 
